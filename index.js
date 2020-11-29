@@ -26,7 +26,7 @@ const prompts = [
   },
   {
     type: "input",
-    message: "Enter any contribution guidelines",
+    message: "Enter any contribution guidelines or co-contributors",
     name: "contributing",
   },
   {
@@ -39,6 +39,11 @@ const prompts = [
     message: "Select which license you'd like to use",
     name: "license",
     choices: ["MIT", "ISC"],
+  },
+  {
+    type: "input",
+    message: "Please enter your github username and an email address at which you can be reached",
+    name: "questions",
   },
 ];
 
