@@ -1,37 +1,40 @@
 function generateMarkdown(response) {
   return `
     
-    # ${response.title}\n
+    # ${response.title}
     
     # Description
-    ${response.description}\n
+    ${response.description}
     
     # Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Contributors](#contributors)
-    * [Tests](#tests)
-    * [License](#license)
-    * [Questions](#questions)
+    * [Installation](#Installation)
+    * [Usage](#Usage)
+    * [Contributors](#Contributors)
+    * [Tests](#Tests)
+    * [License](#License)
+    * [Questions](#Questions)
     
-    # Installation\n
+    # Installation
     ${response.installation}\n
 
-    # Usage\n
+    # Usage
     ${response.usage}\n
 
-    # Contributors\n
+    # Contributors
     ${response.contributing}\n
     
-    # Tests\n
+    # Tests
     ${response.tests}\n
 
-    # License\n
-    ${response.license}
+    # License
+    ${response.license}\n
 
-    # Questions\n
-    ${response.questions}
-    
+    # Questions
+    ${response.github}
+    ${response.email}
+
     
     `;
 }
+
+module.exports = generateMarkdown;

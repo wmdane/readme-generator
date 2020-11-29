@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const markdown = require("./generateMarkdown");
+const generateMarkdown = require("./generateMarkdown");
 
 //user prompts to gather info to be written into the readme
 const prompts = [
@@ -42,13 +42,29 @@ const prompts = [
   },
   {
     type: "input",
-    message: "Please enter your github username and an email address at which you can be reached",
-    name: "questions",
+    message: "Please enter your github username",
+    name: "github",
+  },
+  {
+    type: "input",
+    message: "Please enter an email you can be reached at",
+    name: "email",
   },
 ];
 
+//function to write data to a new file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     err ? console.log(err) : console.log("Success! Now gererating your README!");
   });
 }
+
+function init() {
+  console.log("Thank you for using wmdane's README Generator!");
+  inquirer.prompt(prompts).then((userInput) => {
+    const markdown = generateMarkdown(userInput);
+    writeToFile("README.md", markdown);
+  });
+}
+
+init();
