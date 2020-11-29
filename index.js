@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const markdown = require("/utils/generateMarkdown");
+const markdown = require("./generateMarkdown");
 
 //user prompts to gather info to be written into the readme
 const prompts = [
